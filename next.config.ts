@@ -1,7 +1,21 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const config = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "replicate.delivery",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "pbxt.replicate.delivery",
+        port: "",
+        pathname: "/**",
+      }
+    ],
+  },
 };
 
-export default nextConfig;
+export default config;
