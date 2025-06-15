@@ -49,7 +49,7 @@ export async function POST(request: Request) {
       }
       // 如果是 URL，直接使用 URL
       imageData = image;
-    } catch (e) {
+    } catch {
       // 如果不是有效的 URL，使用 base64 数据
       // 已经在上面处理过了
     }
