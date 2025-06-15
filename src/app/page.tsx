@@ -39,7 +39,7 @@ export default function Home() {
 
       setUploadedImage(base64);
       setError(null);
-    } catch (err) {
+    } catch {
       setError({ 
         message: "图片处理失败",
         details: "请尝试使用其他图片或刷新页面后重试"
@@ -85,8 +85,7 @@ export default function Home() {
       }
 
       setImageUrl(data.imageUrl);
-    } catch (err) {
-      console.error("Error:", err);
+    } catch (err){
       setError({
         message: err instanceof Error ? err.message : "发生未知错误",
         details: err instanceof Error && err.message.includes("人脸") 
