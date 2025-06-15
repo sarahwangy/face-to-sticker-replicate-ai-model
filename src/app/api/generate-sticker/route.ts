@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     let requestData;
     try {
       requestData = await request.json();
-    } catch (e) {
+    } catch {
       return NextResponse.json(
         { error: "无效的请求数据" },
         { status: 400 }
@@ -73,7 +73,7 @@ export async function POST(request: Request) {
     try {
       responseData = await response.json();
       console.log('Replicate API response:', responseData);
-    } catch (e) {
+    } catch {
       console.error('Failed to parse Replicate API response:', await response.text());
       throw new Error('无效的 API 响应');
     }
@@ -120,7 +120,7 @@ export async function POST(request: Request) {
       try {
         statusData = await statusResponse.json();
         console.log('Status check response:', statusData);
-      } catch (e) {
+      } catch {
         console.error('Failed to parse status response:', await statusResponse.text());
         throw new Error('获取状态时发生错误');
       }
